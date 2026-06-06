@@ -1,0 +1,262 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Noto Sans KR',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#000;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* 공통 섹션 */
+
+section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    padding:60px;
+}
+
+/* 우주 */
+
+.hero{
+    background:
+    radial-gradient(circle at center,#1a1a40,#000);
+    text-align:center;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+    background-size:50px 50px;
+    animation:stars 60s linear infinite;
+    opacity:.4;
+}
+
+@keyframes stars{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(500px);
+    }
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:7rem;
+    font-weight:900;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.8rem;
+    opacity:.9;
+}
+
+/* 월드 */
+
+.world{
+    background:
+    linear-gradient(
+        rgba(0,0,0,.4),
+        rgba(0,0,0,.7)
+    ),
+    url("images/world.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.citizens{
+    background:
+    linear-gradient(
+        rgba(0,0,0,.5),
+        rgba(0,0,0,.8)
+    ),
+    url("images/city.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+/* 멤버 */
+
+.member{
+    text-align:center;
+}
+
+.builder{
+    background:#0f172a;
+}
+
+.worker{
+    background:#2c1f12;
+}
+
+.pig{
+    background:#38181d;
+}
+
+.member-card{
+    max-width:700px;
+}
+
+.skin-placeholder{
+    font-size:120px;
+    margin-bottom:20px;
+}
+
+.member h1{
+    font-size:4rem;
+    margin-top:10px;
+}
+
+.member h2{
+    color:#4ade80;
+    margin-bottom:10px;
+}
+
+.member p{
+    margin-top:20px;
+    font-size:1.2rem;
+    opacity:.8;
+}
+
+/* 관리자 */
+
+.admin{
+    background:black;
+    overflow:hidden;
+}
+
+.aura{
+    position:absolute;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    background:#7c3aed;
+    filter:blur(120px);
+    animation:pulse 3s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+        opacity:.6;
+    }
+
+    50%{
+        transform:scale(1.4);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:.6;
+    }
+
+}
+
+.admin-content{
+    text-align:center;
+    z-index:2;
+}
+
+.admin h1{
+    font-size:6rem;
+    font-weight:900;
+    color:#a855f7;
+}
+
+.admin h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+/* 엔딩 */
+
+.ending{
+    flex-direction:column;
+    text-align:center;
+    background:
+    linear-gradient(
+        rgba(0,0,0,.7),
+        rgba(0,0,0,.9)
+    );
+}
+
+.ending h1{
+    font-size:6rem;
+    margin-bottom:20px;
+}
+
+.server-ip{
+    margin-top:30px;
+    font-size:2rem;
+    color:#22c55e;
+    font-weight:700;
+}
+
+button{
+    margin-top:25px;
+    border:none;
+    padding:15px 30px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:1rem;
+    background:#22c55e;
+    color:white;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-4px);
+}
+
+/* 애니메이션 */
+
+.reveal{
+    opacity:0;
+    transform:translateY(100px);
+    transition:all 1.2s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* 모바일 */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:4rem;
+    }
+
+    .admin h1{
+        font-size:3rem;
+    }
+
+    .member h1{
+        font-size:2.5rem;
+    }
+
+}
